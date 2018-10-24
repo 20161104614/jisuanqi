@@ -35,7 +35,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                <state key="normal" title="%"/>
+                                <state key="normal" title="&lt;-"/>
                                 <connections>
                                     <action selector="percent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vvD-0M-q5Q"/>
                                 </connections>
@@ -243,8 +243,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="result_1" destination="1gx-rh-ECj" id="TOg-HM-yKb"/>
-                        <outlet property="result_2" destination="1gx-rh-ECj" id="vW4-36-1Sl"/>
                         <outlet property="show" destination="1gx-rh-ECj" id="3yi-VL-Bs7"/>
                     </connections>
                 </viewController>
