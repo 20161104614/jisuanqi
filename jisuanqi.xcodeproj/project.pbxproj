@@ -193,13 +193,16 @@
 				TargetAttributes = {
 					4BAB621C215E1E8500246A60 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					4BAB6230215E1E8600246A60 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 4BAB621C215E1E8500246A60;
 					};
 					4BAB623B215E1E8600246A60 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 4BAB621C215E1E8500246A60;
 					};
 				};
@@ -438,7 +441,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = project.jisuanqi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -455,7 +458,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = project.jisuanqi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -474,7 +477,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = project.jisuanqiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jisuanqi.app/jisuanqi";
 			};
@@ -494,7 +497,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = project.jisuanqiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jisuanqi.app/jisuanqi";
 			};
@@ -513,7 +516,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = project.jisuanqiUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = jisuanqi;
 			};
@@ -532,7 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = project.jisuanqiUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = jisuanqi;
 			};

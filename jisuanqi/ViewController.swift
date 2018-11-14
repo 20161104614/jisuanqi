@@ -10,76 +10,91 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var show: UITextField!
-    
+    @IBOutlet weak var show: UITextField! //文本框输入
+    //var：定义一个变量 变量类型从右边推导出来的
+    var storage = ""//存储数字
     var userIsInTheMiddleOfTypingANumber: Bool = false
+    
     var judge = 0//决定输出数字的位数
+    
     var re = 0//判断show.text前是否存在符号
     
-    var control:Int = 0
-    var control_minus:Int = 0
-    var number:String = ""
+    var control:Int = 0//计算符号
+    
+    var control_minus:Int = 0//正负号
+    
+    var number:String = ""//第一个数字
+
+    var symblo = ""
+    
     var NumberOfCalculate:Int = 0
     
     @IBAction func add(_ sender: Any) {
         if control != 0 {
             equal(control)
         }
-        control = 2
-        number = show.text!
-        
-        show.text = ""
-        NumberOfCalculate = 0
+        number = storage
+        storage = ""
+        symblo = "+"
+        control = 1
+        show.text = number + symblo
+        judge = 0
+       
     }
     @IBAction func minus(_ sender: Any) {
         if control != 0 {
             equal(control)
         }
-        control = 1
-        number = show.text!
-        show.text = ""
-        NumberOfCalculate = 0
+        number = storage
+        storage = ""
+        symblo = "-"
+        control = 2
+        show.text = number + symblo
     }
     @IBAction func multiply(_ sender: Any) {
         if control != 0 {
             equal(control)
         }
+        number = storage
+        storage = ""
+        symblo = "x"
         control = 4
-        number = show.text!
-        show.text = ""
-        NumberOfCalculate = 0
+        show.text = number + symblo
     }
     @IBAction func divide(_ sender: Any) {
         if control != 0 {
             equal(control)
         }
+        number = storage
+        storage = ""
+        symblo = "÷"
         control = 3
-        number = show.text!
-        show.text = ""
-        NumberOfCalculate = 0
+        show.text = number + symblo
     }
     @IBAction func equal(_ sender: Any) {
-        var strtemp:String = ""
+        var choose:String = ""
         switch control {
         case 1 :
-            strtemp = "\(Double(number)! - Double(show.text!)!)"
+            choose = "\(Double(number)! + Double(storage)!)"
         case 2 :
-            strtemp = "\(Double(number)! + Double(show.text!)!)"
+            choose = "\(Double(number)! - Double(storage)!)"
         case 3:
-            strtemp = "\(Double(number)! / Double(show.text!)!)"
+            choose = "\(Double(number)! / Double(storage)!)"
         case 4:
-            strtemp = "\(Double(number)! * Double(show.text!)!)"
+            choose = "\(Double(number)! * Double(storage)!)"
         default:
-            strtemp = "0"
+            choose = "0"
         }
         
-        while (strtemp.last == "0"){
-            strtemp.removeLast()
+        choose = String(format:"%0.8f",Double(choose)!)
+        
+        while (choose.last == "0"){
+            choose.removeLast()
         }
-        if (strtemp.last == "."){
-            strtemp.removeLast()
+        if (choose.last == "."){
+            choose.removeLast()
         }
-        show.text = strtemp
+        show.text = choose
         control = 0
         number = show.text!
         NumberOfCalculate = NumberOfCalculate + 1
@@ -96,106 +111,133 @@ class ViewController: UIViewController {
     }
     @IBAction func percent(_ sender: Any) {
          show.text?.removeLast()
+         storage = show.text!
     }
     @IBAction func entrt(_ sender: Any) {
+        storage = ""
         show.text = ""
+        judge = 0
         re = 0
     }
     
     @IBAction func num_1(_ sender: Any) {
         if userIsInTheMiddleOfTypingANumber{
-        show.text = show.text! + "1"
+        storage = storage + "1"
+            show.text = storage
         }
         else {
-            show.text = "1"
+            storage = "1"
+            show.text = storage
             userIsInTheMiddleOfTypingANumber = true
         }
     }
     @IBAction func num_2(_ sender: Any) {
         if userIsInTheMiddleOfTypingANumber{
-            show.text = show.text! + "2"
+            storage = storage + "2"
+            show.text = storage
         }
         else {
-            show.text = "2"
+            storage = "2"
+            show.text = storage
             userIsInTheMiddleOfTypingANumber = true
         }
     }
     @IBAction func num_3(_ sender: Any) {
         if userIsInTheMiddleOfTypingANumber{
-            show.text = show.text! + "3"
+           storage = storage + "3"
+            show.text = storage
         }
         else {
-            show.text = "3"
+            storage = "3"
+            show.text = storage
             userIsInTheMiddleOfTypingANumber = true
         }
     }
     @IBAction func num_4(_ sender: Any) {
         if userIsInTheMiddleOfTypingANumber{
-            show.text = show.text! + "4"
+            storage = storage + "4"
+            show.text = storage
         }
         else {
-            show.text = "4"
+            storage = "4"
+            show.text = storage
             userIsInTheMiddleOfTypingANumber = true
         }
     }
     @IBAction func num_5(_ sender: Any) {
         if userIsInTheMiddleOfTypingANumber{
-            show.text = show.text! + "5"
+            storage = storage + "5"
+            show.text = storage
         }
         else {
-            show.text = "5"
+            storage = "5"
+            show.text = storage
             userIsInTheMiddleOfTypingANumber = true
         }
     }
     @IBAction func num_6(_ sender: Any) {
         if userIsInTheMiddleOfTypingANumber{
-            show.text = show.text! + "6"
+            storage = storage + "6"
+            show.text = storage
         }
         else {
-            show.text = "6"
+            storage = "6"
+            show.text = storage
             userIsInTheMiddleOfTypingANumber = true
         }
     }
     @IBAction func num_7(_ sender: Any) {
         if userIsInTheMiddleOfTypingANumber{
-            show.text = show.text! + "7"
+            storage = storage + "7"
+            show.text = storage
         }
         else {
-            show.text = "7"
+            storage = "7"
+            show.text = storage
             userIsInTheMiddleOfTypingANumber = true
         }
     }
     @IBAction func num_8(_ sender: Any) {
         if userIsInTheMiddleOfTypingANumber{
-            show.text = show.text! + "8"
+            storage = storage + "8"
+            show.text = storage
         }
         else {
-            show.text = "8"
+            storage = "8"
+            show.text = storage
             userIsInTheMiddleOfTypingANumber = true
         }
     }
     @IBAction func num_9(_ sender: Any) {
         if userIsInTheMiddleOfTypingANumber{
-            show.text = show.text! + "9"
+            storage = storage + "9"
+            show.text = storage
         }
         else {
-            show.text = "9"
+            storage = "9"
+            show.text = storage
             userIsInTheMiddleOfTypingANumber = true
         }
     }
     @IBAction func num_0(_ sender: Any) {
         if userIsInTheMiddleOfTypingANumber{
-            show.text = show.text! + "0"
+            storage = storage + "0"
+            show.text = storage
         }
         else {
-            show.text = "0"
+            storage = "0"
+            show.text = storage
             userIsInTheMiddleOfTypingANumber = true
         }
     }
     
     @IBAction func dot(_ sender: Any) {
-        show.text = show.text! + "."
+        if(judge == 0)
+        {
+        storage = storage + "."
+        show.text = storage
         judge = 1
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -207,6 +249,4 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-
