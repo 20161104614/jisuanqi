@@ -32,61 +32,103 @@ class ViewController: UIViewController {
     @IBAction func add(_ sender: Any) {
         if control != 0 {
             equal(control)
+            symblo = "+"
+            control = 1
+            number = storage
+            show.text = number + symblo
+            storage = ""
         }
-        number = storage
-        storage = ""
-        symblo = "+"
-        control = 1
-        show.text = number + symblo
-        judge = 0
+        else
+        {
+            number = storage
+            storage = ""
+            symblo = "+"
+            control = 1
+            show.text = number + symblo
+            judge = 0
+        }
        
     }
     @IBAction func minus(_ sender: Any) {
         if control != 0 {
             equal(control)
+            symblo = "-"
+            control = 2
+            number = storage
+            show.text = number + symblo
+            storage = ""
         }
-        number = storage
-        storage = ""
-        symblo = "-"
-        control = 2
-        show.text = number + symblo
+        else {
+            number = storage
+            storage = ""
+            symblo = "-"
+            control = 2
+            show.text = number + symblo
+        }
     }
     @IBAction func multiply(_ sender: Any) {
         if control != 0 {
             equal(control)
+            symblo = "x"
+            control = 4
+            number = storage
+            show.text = number + symblo
+            storage = ""
         }
-        number = storage
-        storage = ""
-        symblo = "x"
-        control = 4
-        show.text = number + symblo
+        else
+        {
+            number = storage
+            storage = ""
+            symblo = "x"
+            control = 4
+            show.text = number + symblo
+        }
     }
     @IBAction func divide(_ sender: Any) {
         if control != 0 {
             equal(control)
+            symblo = "÷"
+            control = 3
+            number = storage
+            show.text = number + symblo
+            storage = ""
         }
-        number = storage
-        storage = ""
-        symblo = "÷"
-        control = 3
-        show.text = number + symblo
+        else
+        {
+            number = storage
+            storage = ""
+            symblo = "÷"
+            control = 3
+            show.text = number + symblo
+        }
     }
     @IBAction func equal(_ sender: Any) {
         var choose:String = ""
+        
         switch control {
-        case 1 :
+        case 1:
             choose = "\(Double(number)! + Double(storage)!)"
-        case 2 :
+        case 2:
             choose = "\(Double(number)! - Double(storage)!)"
         case 3:
-            choose = "\(Double(number)! / Double(storage)!)"
+            if (storage == "0")
+            {
+                choose = "错误，除数不为零"
+            }
+            else
+            {
+                choose = "\(Double(number)! / Double(storage)!)"
+            }
         case 4:
             choose = "\(Double(number)! * Double(storage)!)"
         default:
             choose = "0"
         }
         
-        choose = String(format:"%0.8f",Double(choose)!)
+        if(choose != "错误，除数不为零")
+        {
+            choose = String(format:"%0.8f",Double(choose)!)
+        }
         
         while (choose.last == "0"){
             choose.removeLast()
@@ -94,15 +136,16 @@ class ViewController: UIViewController {
         if (choose.last == "."){
             choose.removeLast()
         }
+        
         show.text = choose
         control = 0
-        number = show.text!
+        storage = choose
         NumberOfCalculate = NumberOfCalculate + 1
     }
     @IBAction func change(_ sender: Any) {
         if control_minus == 0 {
-           show.text = "-" + show.text!
-           control_minus = 1
+            show.text = "-" + show.text!
+            control_minus = 1
         }
         else {
             show.text?.removeFirst()
@@ -110,14 +153,15 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func percent(_ sender: Any) {
-         show.text?.removeLast()
-         storage = show.text!
+        show.text?.removeLast()
+        storage = show.text!
     }
     @IBAction func entrt(_ sender: Any) {
         storage = ""
         show.text = ""
         judge = 0
         re = 0
+        control = 0
     }
     
     @IBAction func num_1(_ sender: Any) {
