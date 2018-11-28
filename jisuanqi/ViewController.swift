@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             equal(control)
             symblo = "+"
             control = 1
-            number = storage
+            //number = storage
             show.text = number + symblo
             storage = ""
         }
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
             equal(control)
             symblo = "-"
             control = 2
-            number = storage
+            //number = storage
             show.text = number + symblo
             storage = ""
         }
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
             equal(control)
             symblo = "x"
             control = 4
-            number = storage
+            //number = storage
             show.text = number + symblo
             storage = ""
         }
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
             equal(control)
             symblo = "÷"
             control = 3
-            number = storage
+            //number = storage
             show.text = number + symblo
             storage = ""
         }
@@ -138,8 +138,8 @@ class ViewController: UIViewController {
         }
         
         show.text = choose
-        control = 0
-        storage = choose
+        //control = 0
+        number = choose
         NumberOfCalculate = NumberOfCalculate + 1
     }
     @IBAction func change(_ sender: Any) {
